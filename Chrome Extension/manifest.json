@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Distractions Begone!",
+    "description": "Blocks destracting sites and remindes you to get back to work.",
+    "version": "1.0",
+    "icons": {
+        "16": "/icons/book16.png",
+        "48": "/icons/book48.png",
+        "128": "/icons/book128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.instagram.com/*", 
+                "https://www.reddit.com/*", 
+                "https://www.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
