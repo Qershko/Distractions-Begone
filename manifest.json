@@ -8,12 +8,26 @@
         "48": "/icons/book48.png",
         "128": "/icons/book128.png"
     },
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ruleset1",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    },
+    "host_permissions": [
+        "*://instagram.com/*"
+    ],
+    "permissions": [
+        "declarativeNetRequest",
+        "webNavigation"
+    ],
     "content_scripts": [
         {
             "matches": [
-                "https://www.instagram.com/*", 
-                "https://www.reddit.com/*", 
-                "https://www.youtube.com/*"
+                "*://instagram.com/*"
             ],
             "js": [
                 "content.js"
