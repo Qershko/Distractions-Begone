@@ -18,6 +18,7 @@
         ]
     },
     "host_permissions": [
+        "*://youtube.com/*",
         "*://instagram.com/*"
     ],
     "permissions": [
