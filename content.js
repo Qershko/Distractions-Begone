@@ -16,12 +16,13 @@ const generateSTYLES = () => {
   }
     h2 {
       float: right;
-      margin-right: -20.5%;
+      margin-right: -20.90%;
       font-size: 2.5vw;
       color: aliceblue;
       margin-top: 16%;
       font-family: "Times New Roman";
       font-weight: 300;
+      text-shadow: 1px 2px black;
   }
   `;
 };
@@ -46,10 +47,6 @@ const generateHTML = (pageName) => {
 switch (window.location.hostname) {
   case "www.youtube.com":
     document.head.innerHTML ='<style>'+ generateSTYLES() + "</style>";
-    document.body.innerHTML = generateHTML("YOUTUBE");
-    break;
-  case "www.instagram.com":
-    document.head.innerHTML ='<style>'+ generateSTYLES() + "</style>";
-    document.body.innerHTML = generateHTML("INSTAGRAM");
+    document.body.innerHTML = generateHTML();
     break;
 }

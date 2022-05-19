@@ -8,7 +8,7 @@
         "48": "timer48.png",
         "128": "timer128.png"
     },
-    "browser_action": {
+    "action": {
         "default_icon": "timer.png",
         "default_popup": "popup.html"
     },
