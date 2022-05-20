@@ -27,7 +27,7 @@ const generateSTYLES = () => {
   `;
 };
 
-const generateHTML = (pageName) => {
+const generateHTML = () => {
   return `
     <h1> 
       Nice Try...
@@ -47,6 +47,6 @@ const generateHTML = (pageName) => {
 switch (window.location.hostname) {
   case "www.youtube.com":
     document.head.innerHTML ='<style>'+ generateSTYLES() + "</style>";
-    document.body.innerHTML = generateHTML;
+    document.body.innerHTML = generateHTML();
     break;
 }
