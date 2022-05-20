@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Distractions Begone!",
+    "name": "Distractions Begone",
     "description": "Blocks destracting sites and remindes you to get back to work.",
     "version": "1.0",
     "icons":{
