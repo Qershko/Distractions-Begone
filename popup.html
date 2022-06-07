@@ -13,18 +13,16 @@
         Add the website below to block it or setup reminders.
     </p>
     <form action="popup.js" style="padding:top = 5px">
-        <input type="text" id="website" placeholder="youtube.com">
-        <select name="dropDown" onchange="showText()">
+        <input type="text" id="website" placeholder="youtube.com" size="12">
+        <select id="action" name="dropDown">
             <option value="0">Block</option>
             <option value="1">Reminder</option>
-         </select>
-         <div id="hidden_div" style="display:none;">
-            <input type="text" id="timer" placeholder="15(minutes)">
+        </select>
+       <script src=popupForm.js></script>
+       <div id="hidden_div" style="display: none;" float: right>
+            <input type="text" id="timer" placeholder="15(min)" size="3" >
         </div>
-         
-        
         <input type="submit" value="Submit">
     </form>
-    <script src="popupForm.js"></script>
 </body>
 </html>
