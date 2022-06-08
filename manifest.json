@@ -4,9 +4,9 @@
     "description": "Blocks destracting sites and remindes you to get back to work.",
     "version": "1.0",
     "icons":{
-        "16": "timer16.png",
-        "48": "timer48.png",
-        "128": "timer128.png"
+        "16": "Timer-Logo/timer16.png",
+        "48": "Timer-Logo/timer48.png",
+        "128": "Timer-Logo/timer128.png"
     },
     "action": {
         "default_popup": "popup.html"
