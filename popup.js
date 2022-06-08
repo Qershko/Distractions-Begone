@@ -34,7 +34,7 @@ function dump(obj) {
 function removeSite(id) {
 
     siteList = siteList.filter((s) => s.id != id);
-    showDebug("rmeoveSite: " + dump(siteList))
+    showDebug("removeSite: " + dump(siteList))
 
     siteListEl.innerHTML = "";
     siteList.forEach((siteEntry) => {
@@ -72,20 +72,3 @@ submitButton.addEventListener('click', function () {
         showDebug(e);
     }
 })
-
-// chrome.storage.sync.set({ test: 'Matthew Boy' }, function () {
-//     //console.log('Value is set to ' + value);
-// });
-
-
-// chrome.storage.sync.get(['test'], function (result) {
-//     test = result.key;
-// });
-//chrome.storage.sync.set({ test: "Mattyusha" });
-//test = sessionStorage.setItem('test', "Mattyusha")
-//console.log(test);
-
-// chrome.storage.sync.get('test', function (data) {
-//     document.querySelector('#debug').innerHTML = data.mytext;
-// });
-
