@@ -20,15 +20,13 @@
 
 </head>
 
-<body>
-    <img src="Logo Header/Logo-Header-w325.jpg" width="auto" height="auto">
-    <p style="font-family:verdana">
-        Add the website below to block it or setup reminders.
+<body style="background-color:black; padding-left: 5px;">
+    <img src="Logo Header\Distractions-Main-Logo-800x600.jpg" width="auto" height="auto">
+    <p style="font-family:verdana; color:white; font-size: 15px;">
+        Add a website below to block it or setup reminders. If you choose reminder, an alert will popup on your screen as often as you set it.
     </p>
 
-    <div id="debug"></div>
-
-    <div style="padding:top = 5px">
+    <div>
         <input type="text" id="website" placeholder="youtube.com" style="width:125px;">
         <select style="display: inline-block;" id="action" name="dropDown">
             <option value="0">Block</option>
@@ -41,8 +39,7 @@
         </div>
     </div>
 
-    <br><br>
-    <div id="site-list" style="display: grid; grid-auto-flow: row;"></div>
+    <div id="site-list" style="display: grid; grid-auto-flow: row; color:white; padding-top: 5px;"></div>
 
     <script src=popup.js></script>
 
