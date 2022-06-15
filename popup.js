@@ -8,11 +8,6 @@ function toggleTimer() {
     document.getElementById('hidden_div').style.display = style;
 }
 
-function showDebug(content) {
-    document.querySelector('#debug').innerHTML = content;
-}
-
-
 function addSiteEntry(siteEntry) {
     siteListEl.innerHTML += `<div class="site-entry" ><span>${siteEntry.site}</span><span>${siteEntry.time ? "Reminder every " + siteEntry.time + " mins" : "Blocked"}</span><span><button id="remove-${siteEntry.id}">X</button></span></div>`;
     showDebug(dump(siteList))
@@ -72,3 +67,22 @@ submitButton.addEventListener('click', function () {
         showDebug(e);
     }
 })
+
+window.onload = function(){
+    document.getElementById('submit-button').onclick = function() {
+        var value = document.getElementById('website').value;
+        alert(value);
+    }
+}
+
+function showDebug(content) {
+    document.querySelector('#debug').innerHTML = content;
+}
+
+chrome.storage.sync.set({key: value}, function() {
+    console.log('Value is set to ' + value);
+});
+  
+chrome.storage.sync.get(['key'], function(result) {
+    console.log('Value currently is ' + result.key);
+});
