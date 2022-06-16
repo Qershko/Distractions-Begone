@@ -64,25 +64,27 @@ submitButton.addEventListener('click', function () {
 
 
     } catch (e) {
-        showDebug(e);
+        //showDebug(e);
     }
 })
+
+/*
+function showDebug(content) {
+    document.querySelector('#debug').innerHTML = content;
+}
+*/
 
 window.onload = function(){
     document.getElementById('submit-button').onclick = function() {
         var value = document.getElementById('website').value;
-        alert(value);
+        //alert(value);
+
+        chrome.storage.sync.set({'myLine': value}, function() {
+            alert(value);
+        });
     }
-}
 
-function showDebug(content) {
-    document.querySelector('#debug').innerHTML = content;
+    chrome.storage.sync.get(['myLine'], function() {
+        console.log('Value currently is ' + result.key);
+    });
 }
-
-chrome.storage.sync.set({key: value}, function() {
-    console.log('Value is set to ' + value);
-});
-  
-chrome.storage.sync.get(['key'], function(result) {
-    console.log('Value currently is ' + result.key);
-});
