@@ -26,6 +26,8 @@
         Add a website below to block it or setup reminders. If you choose reminder, an alert will popup on your screen as often as you set it.
     </p>
 
+    <div id="debug"></div>
+
     <div>
         <input type="text" id="website" placeholder="youtube.com" style="width:125px;">
         <select style="display: inline-block;" id="action" name="dropDown">
@@ -37,9 +39,14 @@
         <div id="hidden_div" style="display: none;">
             <input type="number" step="1" id="timer" placeholder="Enter minutes" style="width:125px;">
         </div>
+
+        <button id="get">Get website</button>
+
+        <button id="clear">Clear sync</button>
     </div>
 
-    <div id="site-list" style="display: grid; grid-auto-flow: row; color:white; padding-top: 5px;"></div>
+    
+    <!-- <div id="site-list" style="display: grid; grid-auto-flow: row; color:white; padding-top: 5px;"></div> -->
 
     <script src=popup.js></script>
 
