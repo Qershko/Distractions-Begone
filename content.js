@@ -44,9 +44,63 @@ const generateHTML = () => {
   `;
 };
 
-switch (window.location.hostname) {
-  case "www.youtube.com":
-    document.head.innerHTML ='<style>'+ generateSTYLES() + "</style>";
-    document.body.innerHTML = generateHTML();
-    break;
+
+var port = chrome.runtime.connect({ name: "db_content_messaging" });
+
+port.onMessage.addListener(function (msg) {
+  console.log(msg)
+
+  // port.postMessage({ answer: "Madame" });
+  if (msg.alarm) {
+    let message = `You have been on ${msg.alarm.site} for ${msg.alarm.time} minutes`
+    alert(message);
+    //console.log(message)
+  }
+});
+
+document.addEventListener('visibilitychange', function (e) {
+  if (document.hidden)
+    port.postMessage({ pauseAlarm: true });
+  else {
+    readAllBlockedSites();
+  }
+
+});
+
+window.onload = function () {
+  readAllBlockedSites();
+  console.log(document.hidden)
 }
+
+
+function readAllBlockedSites() {
+  try {
+    chrome.storage.sync.get('db_blocked_sites', (d) => {
+      let sites = []
+      if ('db_blocked_sites' in d) {
+        sites = d['db_blocked_sites']
+      }
+
+      sites.forEach(e => {
+
+        if (window.location.hostname == e.site || window.location.hostname == e.site.replace("www.", "") || window.location.hostname == "www." + e.site) {
+          if (e.time == undefined) { //block
+            block();
+            return;
+          } else {//timer
+            port.postMessage({ alarm: e });
+          }
+        }
+      });
+
+      function block() {
+        document.head.innerHTML = '<style>' + generateSTYLES() + "</style>";
+        document.body.innerHTML = generateHTML();
+      }
+    });
+  } catch (e) {
+    //alert(e);
+  }
+}
+
+
